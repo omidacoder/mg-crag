@@ -1,0 +1,15 @@
+__pycache__
+.ruff_cache
+index/*
+tools/__pycache__
+nodes/__pycache__
+models/__pycache__
+models/**/*.gguf
+src/Documents/
+*.pdf
+**/*.jsonl
+src/Dataset/*
+.env
+outputs/search_results/*.pickle
+outputs/*.pickle
+.vscode
