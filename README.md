@@ -3,7 +3,7 @@
 
 This is the implementation for MG-CRAG paper. The MG-CRAG method refines retrieved documents in a Multi-Granular manner, utilizing two retrieval evaluators sequentially. The training of the evaluator models is performed using a weakly supervised approach, leveraging an autoencoder to create a separable latent space. Additionally, MG-CRAG introduces various mechanisms, each performing optimally under specific conditions, with the extent of web search usage being tunable for each.
 
-This Section will be updated after the paper is published.
+**This Section will be updated after the paper is published.**
 
 
 
@@ -54,7 +54,7 @@ with open(file_path, 'rb') as handle:
 print(loaded_file)
 ```
 
- This section will also be completed after the publication of the paper.
+ **This section will also be completed after the publication of the paper.**
 
 ## Refferences
 
