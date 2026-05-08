@@ -1,11 +1,13 @@
 
 # MG-CRAG: Fusion of Multi-Granular Retrieval Evaluators in Corrective RAG with Weakly Supervised Fine-Tuning
 
-This is the implementation for MG-CRAG paper. The MG-CRAG method refines retrieved documents in a Multi-Granular manner, utilizing two retrieval evaluators sequentially. The training of the evaluator models is performed using a weakly supervised approach, leveraging an autoencoder to create a separable latent space. Additionally, MG-CRAG introduces various mechanisms, each performing optimally under specific conditions, with the extent of web search usage being tunable for each.
+This is the python implementation for MG-CRAG paper. This paper introduces multi-granular corrective retrieval-augmented generation (MG-CRAG), a novel framework that enhances response quality in retrieval-based systems by processing text at multiple levels of granularity. Building on recent CRAG approaches that mitigate hallucinations in large language models through irrelevant content filtering, our method addresses the limitations of heuristic labeling via a weakly supervised, four-stage pipeline that combines manual annotation with autoencoder-guided pseudo-labeling. The framework employs a sequential passage-level retrieval evaluator and sentence-level retrieval evaluator, both based on efficient T5 architectures, to hierarchically refine documents. The short-answer datasets used in this study include ARC-Challenge, PubHealth, and PopQA. MG-CRAG achieves state-of-the-art performance on ARC-Challenge (68.85% accuracy) and PopQA (59.89% accuracy), while delivering equal results on the PubHealth dataset despite a lower web search rate. Key advantages include significantly reduced dependence on web search, minimal labeled data requirements, and customizable inference modes (strict/moderate/lenient) that optimize performance across different dataset characteristics. The framework also enables tunable trade-offs between accuracy and web search usage, demonstrating that multi-granular processing enhances focus on relevant content, substantially improving answer accuracy while maintaining computational efficiency. 
 
-**This Section will be updated after the paper is published.**
+Here is the training phase diagram:
+![](images/train_phase.png)
 
-
+and the inference phase diagram:
+![](images/inference_phase.png)
 
 
 ## Run Locally
@@ -48,7 +50,25 @@ with open(file_path, 'rb') as handle:
 print(loaded_file)
 ```
 
- **This section will also be completed after the publication of the paper.**
+## Citation
+
+If you find our code or the paper useful, please cite the paper:
+```
+@article{Masoumi2026,
+  author  = {Masoumi, Negin and Davar, Omid and Eftekhari, Mahdi},
+  title   = {MG-CRAG: fusion of multi-granular retrieval evaluators in corrective RAG with weakly supervised fine-tuning},
+  journal = {Knowledge and Information Systems},
+  year    = {2026},
+  volume  = {68},
+  number  = {1},
+  pages   = {149},
+  month   = {may},
+  issn    = {0219-3116},
+  doi     = {10.1007/s10115-026-02778-2},
+  url     = {https://doi.org/10.1007/s10115-026-02778-2}
+}
+```
+
 
 ## Refferences
 
